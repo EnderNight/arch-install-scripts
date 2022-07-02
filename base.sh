@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Base installation
-# packages needed : linux linux-firmware git vim *-ucode (+ fs packages)
+# packages needed : base linux linux-firmware git vim *-ucode (+ fs packages)
 
 pacman -S --noconfirm networkmanager man-db man-pages texinfo grub efibootmgr 
 

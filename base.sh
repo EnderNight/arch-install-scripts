@@ -3,7 +3,7 @@
 # Base installation
 # packages needed : linux linux-firmware git vim *-ucode (+ fs packages)
 
-pacman -S networkmanager man-db man-pages texinfo grub efibootmgr 
+pacman -S --noconfirm networkmanager man-db man-pages texinfo grub efibootmgr 
 
 # Time zone
 ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime

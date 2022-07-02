@@ -36,6 +36,7 @@ useradd -m ender
 passwd ender
 usermod -aG wheel ender
 echo "ender ALL=(ALL:ALL) ALL" >> /etc/sudoers.d/ender
+mv /arch-install-scripts/ /home/ender/
 
 # Package management
 systemctl enable reflector.timer

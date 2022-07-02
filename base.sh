@@ -32,6 +32,6 @@ grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 
 # Poweroff
-printf "\e[0;31mDone ! Exiting in 5 sec...\e[m"
+printf "\e[0;31mDone ! Exiting in 5 sec...\n\e[m"
 sleep 5
 exit

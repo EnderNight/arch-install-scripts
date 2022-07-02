@@ -3,31 +3,8 @@
 # This script requires the script base.sh.
 # This script is made to install a basic arch linux desktop system. The prefered usage is to launch a [de].sh script after this one.
 
-
-
-# Package management
-sed -i '37s/.//' /etc/pacman.conf
-sed -i '93s/.//' /etc/pacman.conf
-sed -i '94s/.//' /etc/pacman.conf
-
-git clone https://aur.archlinux.org/yay.git
-cd yay/
-makepkg -sci
-cd ..
-rm -r yay/
-
-yay -Suy
-
-
-
-
-# Needed packages
-# This packages are installed now to keep the base.sh script fast.
-
-yay -S --noconfirm base-devel linux-headers neofetch reflector mkinitcpio-numlock xorg htop firefox cpupower cpupower-gui power-profiles-daemon pulseaudio pulseaudio-alsa firewalld bind cups cups-pdf avahi nss-mdns $(pacman -Ssq ttf | grep -v ttf-nerd-fonts-symbols-mono) p7zip rar zip
-
-
-
+# Base packages
+pacman -S --noconfirm base-devel linux-headers neofetch reflector
 
 
 # Users and groups
@@ -37,6 +14,28 @@ usermod -aG wheel ender
 echo "ender ALL=(ALL:ALL) ALL" >> /etc/sudoers.d/ender
 
 
+# Package management
+sed -i '37s/.//' /etc/pacman.conf
+sed -i '93s/.//' /etc/pacman.conf
+sed -i '94s/.//' /etc/pacman.conf
+pacman -Suy
+
+git clone https://aur.archlinux.org/yay.git
+cd yay/
+su - ender
+makepkg -sci
+logout
+cd ..
+rm -r yay/
+
+yay -Suy
+systemctl enable reflector.timer
+
+
+# Needed packages
+# This packages are installed now to keep the base.sh script fast.
+
+yay -S --noconfirm mkinitcpio-numlock xorg htop firefox cpupower cpupower-gui power-profiles-daemon pulseaudio pulseaudio-alsa firewalld bind cups cups-pdf avahi nss-mdns $(pacman -Ssq ttf | grep -v ttf-nerd-fonts-symbols-mono) p7zip rar zip
 
 
 # Booting
@@ -44,16 +43,12 @@ echo "Place 'numlock' hook in the hooks section"
 while [ true ] ; do
 read -t 3 -n 1
 if [ $? = 0 ] ; then
-exit
+break
 else echo "waiting for keypress"
 fi
 done
 echo "numlock" >> /etc/mkinitcpio.conf
 vim /etc/mkinitcpio.conf
-
-
-
-
 
 
 # Graphical user interface
@@ -66,23 +61,14 @@ yay -S --noconfirm xf86-video-amdgpu mesa lib32-mesa vulkan-radeon lib32-vulkan-
 #yay -S --noconfirm nvidia nvidia-utils lib32-nvidia-utils nvidia-settings ## NVIDIA
 
 
-
-
-
 # Power management
 systemctl enable cpupower
 systemctl enable power-profles-daemon
 
 
-
-
-
 # Networking
 systemctl enable named
 systemctl enable firewalld
-
-
-
 
 
 # System services
@@ -92,15 +78,12 @@ echo "Place 'mdns_minimal [NOTFOUND=return] before resolve and dns in the hosts 
 while [ true ] ; do
 read -t 3 -n 1
 if [ $? = 0 ] ; then
-exit
+break
 else echo "waiting for keypress"
 fi
 done
 echo "mdns_minimal [NOTFOUND=return]" >> /etc/nsswitch.conf
 vim /etc/nsswitch.conf
-
-
-
 
 
 printf "\e[0;31mDone ! Rebooting in 5 secs...\e[m"

@@ -21,7 +21,7 @@ yay -Suy
 # Needed packages
 # This packages are installed now to keep the base.sh script fast.
 
-yay -S --noconfirm mkinitcpio-numlock xorg htop firefox cpupower cpupower-gui power-profiles-daemon pulseaudio pulseaudio-alsa firewalld bind cups cups-pdf avahi nss-mdns $(pacman -Ssq ttf | grep -v ttf-nerd-fonts-symbols-mono) p7zip rar zip
+yay -S --noconfirm mkinitcpio-numlock xorg htop firefox pulseaudio firewalld bind cups cups-pdf avahi nss-mdns $(pacman -Ssq ttf | grep -v ttf-nerd-fonts-symbols-mono) p7zip rar zip ranger
 
 
 # Booting
@@ -34,6 +34,7 @@ else echo "waiting for keypress"
 fi
 done
 sudo vim /etc/mkinitcpio.conf
+sudo mkinitcpio -P
 
 
 # Graphical user interface

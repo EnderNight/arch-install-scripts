@@ -10,6 +10,8 @@ Where [de] stands for Desktop Environement.
 Name schemes are used to tell what [de] is going to be installed
 using a [de].sh script.
 
+The exception is the script base.sh which is required by all other scripts. This script does not install the base [de] but install a basic arch linux system.
+
 ## Usage
 These scripts are made to be launched while installing archlinux.
 The prefered way is to launch them after being chrooted into your system.

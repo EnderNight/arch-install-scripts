@@ -17,6 +17,9 @@ rm -r yay/
 
 yay -Suy
 
+# Bug with dkms
+
+
 
 # Needed packages
 # This packages are installed now to keep the base.sh script fast.

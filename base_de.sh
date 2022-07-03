@@ -21,7 +21,7 @@ yay -Suy
 # Needed packages
 # This packages are installed now to keep the base.sh script fast.
 
-yay -S --noconfirm mkinitcpio-numlock xorg htop firefox pulseaudio firewalld bind cups cups-pdf avahi nss-mdns $(pacman -Ssq ttf | grep -v ttf-nerd-fonts-symbols-mono) p7zip rar zip ranger
+yay -S --noconfirm mkinitcpio-numlock xorg htop firefox pulseaudio firewalld bind cups cups-pdf avahi nss-mdns $(pacman -Ssq ttf | grep -v ttf-nerd-fonts-symbols-mono) p7zip rar zip ranger linux-zen linux-zen-headers
 
 
 # Booting
@@ -48,7 +48,6 @@ yay -S --noconfirm xf86-video-amdgpu mesa lib32-mesa vulkan-radeon lib32-vulkan-
 
 
 # Power management
-sudo systemctl enable cpupower
 sudo systemctl enable power-profles-daemon
 
 
@@ -70,6 +69,8 @@ fi
 done
 sudo vim /etc/nsswitch.conf
 
+# Regenerating grub config
+sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 printf "\e[0;31mDone ! Rebooting in 5 secs...\e[m"
 sleep 5

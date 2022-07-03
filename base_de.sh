@@ -24,7 +24,7 @@ yay -Suy
 # Needed packages
 # This packages are installed now to keep the base.sh script fast.
 
-yay -S mkinitcpio-numlock xorg htop firefox pulseaudio firewalld bind cups cups-pdf avahi nss-mdns $(pacman -Ssq ttf | grep -v ttf-nerd-fonts-symbols-mono) p7zip rar zip ranger linux-zen linux-zen-headers
+yay -S mkinitcpio-numlock xorg htop firefox pulseaudio firewalld bind cups cups-pdf avahi nss-mdns $(pacman -Ssq ttf | grep -v ttf-nerd-fonts-symbols-mono) p7zip rar zip ranger linux-zen linux-zen-headers openssh
 
 
 # Booting

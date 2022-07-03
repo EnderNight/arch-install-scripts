@@ -21,7 +21,7 @@ yay -Suy
 # Needed packages
 # This packages are installed now to keep the base.sh script fast.
 
-yay -S --noconfirm mkinitcpio-numlock xorg htop firefox pulseaudio firewalld bind cups cups-pdf avahi nss-mdns $(pacman -Ssq ttf | grep -v ttf-nerd-fonts-symbols-mono) p7zip rar zip ranger linux-zen linux-zen-headers
+yay -S mkinitcpio-numlock xorg htop firefox pulseaudio firewalld bind cups cups-pdf avahi nss-mdns $(pacman -Ssq ttf | grep -v ttf-nerd-fonts-symbols-mono) p7zip rar zip ranger linux-zen linux-zen-headers
 
 
 # Booting
@@ -40,11 +40,11 @@ sudo mkinitcpio -P
 # Graphical user interface
 # uncomment lines to install appropriate drivers
 
-yay -S --noconfirm xf86-video-amdgpu mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver mesa-vdpau lib32-mesa-vdpau ## AMD
+yay -S xf86-video-amdgpu mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver mesa-vdpau lib32-mesa-vdpau ## AMD
 
-#yay -S --noconfirm xf86-video-intel mesa lib32-mesa vulkan-intel intel-media-driver libvdpau-va-gl ## Intel
+#yay -S xf86-video-intel mesa lib32-mesa vulkan-intel intel-media-driver libvdpau-va-gl ## Intel
 
-#yay -S --noconfirm nvidia nvidia-utils lib32-nvidia-utils nvidia-settings ## NVIDIA
+#yay -S nvidia nvidia-utils lib32-nvidia-utils nvidia-settings ## NVIDIA
 
 
 # Power management

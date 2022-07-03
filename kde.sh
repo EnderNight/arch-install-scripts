@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Base packages
-yay -S --needed plasma kde-applications materia-kde papirus-icon-theme code unityhub gimp inkscape chromium discord audacity lmms vlc obs-studio libreoffice-fresh ttf-gentium-basic adobe-source-code-pro-fonts adobe-source-sans-fonts adobe-source-serif-fonts hunspell hunspell-fr hunspell-en_us hyphen hyphen-fr libmythes mythes-fr libreoffice-extension-languagetool jre8-openjdk libreoffice-extension-grammalecte-fr openrazer-meta polychromatic linux-lts linux-lts-headers linux-zen linux-zen-headers polymc lutris steam legendary zsh zsh-completions zsh-syntax-highlighting zsh-autosuggestions zsh-theme-powerlevel10k ttf-meslo-nerd-font-powerlevel10k cmake nodejs jdk11-openjdk npm mono grapejuice
+yay -S --needed plasma kde-applications materia-kde papirus-icon-theme code unityhub gimp inkscape chromium discord audacity lmms vlc obs-studio libreoffice-fresh ttf-gentium-basic adobe-source-code-pro-fonts adobe-source-sans-fonts adobe-source-serif-fonts hunspell hunspell-fr hunspell-en_us hyphen hyphen-fr libmythes mythes-fr libreoffice-extension-languagetool jre8-openjdk libreoffice-extension-grammalecte-fr openrazer-meta polychromatic linux-zen linux-zen-headers polymc lutris steam legendary zsh zsh-completions zsh-syntax-highlighting zsh-autosuggestions zsh-theme-powerlevel10k ttf-meslo-nerd-font-powerlevel10k cmake nodejs jdk11-openjdk npm mono grapejuice
 
 ## Display manager
 #systemctl enable sddm

@@ -14,10 +14,10 @@ hwclock --systohc
 sed -i 's/#en_US.UTF-8/en_US.UTF-8/' /etc/locale.gen
 sed -i 's/#fr_FR.UTF-8/fr_FR.UTF-8/' /etc/locale.gen
 locale-gen
-echo "LANG=en_US.UTF-8" >> /etc/locale.conf
+echo "LANG=en_US.UTF-8" > /etc/locale.conf
 
 # Network configuration
-echo "Arch" >> /etc/hostname
+echo "Arch" > /etc/hostname
 systemctl enable NetworkManager
 
 # Initramfs
@@ -35,7 +35,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 useradd -m ender
 passwd ender
 usermod -aG wheel ender
-echo "ender ALL=(ALL:ALL) ALL" >> /etc/sudoers.d/ender
+echo "ender ALL=(ALL:ALL) ALL" > /etc/sudoers.d/ender
 mv /arch-install-scripts/ /home/ender/
 chown -R ender:ender /home/ender/arch-install-scripts/
 

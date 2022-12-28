@@ -1,5 +1,5 @@
 # Arch Linux Installation Scripts
-Personal arch installation scripts, not made to be portable.
+Personal arch installation scripts.
 
 ## Name scheme
 Scripts' names follow this scheme :
